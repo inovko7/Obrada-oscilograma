@@ -1,0 +1,1 @@
+# Obrada-oscilograma
