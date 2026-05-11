@@ -546,7 +546,7 @@ with tab2:
 
         with col_main:
             it = items[sel_idx]
-            st =_settings = settings[sel_idx]
+            cur_settings = settings[sel_idx]
             meta = it.get("meta", {}) or {}
 
             st.markdown(f"#### {labels[sel_idx]}")
@@ -554,31 +554,31 @@ with tab2:
             # Per-oscillogram controls
             cc1, cc2, cc3, cc4 = col_main.columns(4)
             with cc1:
-                xmax_val = col_main.number_input(
+                xmax_val = st.number_input(
                     "X max (µs)",
-                    value=float(_settings["xmax_us"]),
+                    value=float(cur_settings["xmax_us"]),
                     min_value=1.0,
                     key=f"xmax_{sel_idx}"
                 )
             with cc2:
-                y_mode = col_main.selectbox(
+                y_mode = st.selectbox(
                     "Y osa",
                     ["auto", "manual"],
-                    index=0 if _settings["y_mode"] == "auto" else 1,
+                    index=0 if cur_settings["y_mode"] == "auto" else 1,
                     key=f"ymode_{sel_idx}"
                 )
             with cc3:
-                y_step = col_main.number_input(
+                y_step = st.number_input(
                     "Y step (kV)",
-                    value=float(_settings.get("y_step_kv") or 50.0),
+                    value=float(cur_settings.get("y_step_kv") or 50.0),
                     min_value=0.1,
                     key=f"ystep_{sel_idx}",
                     disabled=(y_mode == "auto")
                 )
             with cc4:
-                scale = col_main.number_input(
+                scale = st.number_input(
                     "Scale",
-                    value=float(_settings.get("scale_factor", 1.0)),
+                    value=float(cur_settings.get("scale_factor", 1.0)),
                     key=f"scale_{sel_idx}"
                 )
 
@@ -592,22 +592,18 @@ with tab2:
             sidebar_params["serial_number"] = st.session_state.serial_number
 
             # Apply to all button
-            if col_main.button("Apply X max to ALL"):
+            if st.button("Apply X max to ALL"):
                 for s in st.session_state.settings:
                     s["xmax_us"] = xmax_val
                 st.rerun()
 
             # Render preview
-            with col_main:
-                with st.spinner("Renderiranje…"):
-                    try:
-                        png_bytes = render_preview(it, settings[sel_idx], sidebar_params)
-                        st.image(png_bytes, use_container_width=True)
-                    except Exception as e:
-                        st.error(f"Preview greška: {e}")
-
-        # Restore st reference
-        import streamlit as st
+            with st.spinner("Renderiranje…"):
+                try:
+                    png_bytes = render_preview(it, settings[sel_idx], sidebar_params)
+                    st.image(png_bytes, use_container_width=True)
+                except Exception as e:
+                    st.error(f"Preview greška: {e}")
 
 
 # ══════════════════════════════════════════════
