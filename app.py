@@ -47,18 +47,18 @@ h1, h2, h3 {
 }
 
 .stApp {
-    background: #0f0f0f;
-    color: #e8e8e8;
+    background: #f5f5f0;
+    color: #1a1a1a;
 }
 
 section[data-testid="stSidebar"] {
-    background: #161616 !important;
-    border-right: 1px solid #2a2a2a;
+    background: #ffffff !important;
+    border-right: 1px solid #e0e0d8;
 }
 
 .stButton > button {
-    background: #e8ff00 !important;
-    color: #0f0f0f !important;
+    background: #1a1a1a !important;
+    color: #ffffff !important;
     border: none !important;
     font-family: 'IBM Plex Mono', monospace !important;
     font-weight: 600 !important;
@@ -69,13 +69,13 @@ section[data-testid="stSidebar"] {
 }
 
 .stButton > button:hover {
-    background: #ffffff !important;
+    background: #333333 !important;
     transform: translateY(-1px);
 }
 
 .stDownloadButton > button {
-    background: #00ff88 !important;
-    color: #0f0f0f !important;
+    background: #007a4d !important;
+    color: #ffffff !important;
     border: none !important;
     font-family: 'IBM Plex Mono', monospace !important;
     font-weight: 600 !important;
@@ -83,43 +83,43 @@ section[data-testid="stSidebar"] {
 }
 
 div[data-testid="stExpander"] {
-    border: 1px solid #2a2a2a !important;
+    border: 1px solid #e0e0d8 !important;
     border-radius: 4px !important;
-    background: #161616 !important;
+    background: #ffffff !important;
 }
 
 .stSelectbox label, .stNumberInput label, .stTextInput label, .stSlider label {
     font-family: 'IBM Plex Mono', monospace !important;
     font-size: 0.8rem !important;
-    color: #888 !important;
+    color: #666 !important;
     letter-spacing: 0.05em !important;
     text-transform: uppercase !important;
 }
 
 .stTabs [data-baseweb="tab-list"] {
     gap: 0px;
-    background: #161616;
-    border-bottom: 1px solid #2a2a2a;
+    background: #ffffff;
+    border-bottom: 1px solid #e0e0d8;
 }
 
 .stTabs [data-baseweb="tab"] {
     font-family: 'IBM Plex Mono', monospace;
     letter-spacing: 0.05em;
     font-size: 0.85rem;
-    color: #666;
+    color: #999;
     padding: 0.75rem 1.5rem;
 }
 
 .stTabs [aria-selected="true"] {
-    color: #e8ff00 !important;
-    border-bottom: 2px solid #e8ff00 !important;
+    color: #1a1a1a !important;
+    border-bottom: 2px solid #1a1a1a !important;
     background: transparent !important;
 }
 
 .stFileUploader {
-    border: 1px dashed #2a2a2a !important;
+    border: 1px dashed #e0e0d8 !important;
     border-radius: 4px !important;
-    background: #161616 !important;
+    background: #ffffff !important;
 }
 
 .stAlert {
@@ -129,8 +129,8 @@ div[data-testid="stExpander"] {
 }
 
 .metric-card {
-    background: #161616;
-    border: 1px solid #2a2a2a;
+    background: #ffffff;
+    border: 1px solid #e0e0d8;
     border-radius: 4px;
     padding: 1rem 1.25rem;
     font-family: 'IBM Plex Mono', monospace;
@@ -139,18 +139,18 @@ div[data-testid="stExpander"] {
 .metric-value {
     font-size: 1.8rem;
     font-weight: 600;
-    color: #e8ff00;
+    color: #1a1a1a;
 }
 
 .metric-label {
     font-size: 0.7rem;
-    color: #666;
+    color: #999;
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
 
 hr {
-    border-color: #2a2a2a !important;
+    border-color: #e0e0d8 !important;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -282,8 +282,8 @@ def render_preview(item, settings, sidebar_params):
 # ─────────────────────────────────────────────
 st.markdown("""
 <div style="padding: 2rem 0 1rem 0; border-bottom: 1px solid #2a2a2a; margin-bottom: 2rem;">
-    <span style="font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; color: #e8ff00; letter-spacing: 0.2em; text-transform: uppercase;">⚡ High Voltage Lab</span>
-    <h1 style="margin: 0.25rem 0 0 0; font-size: 2rem; color: #ffffff;">Oscilogram Generator</h1>
+    <span style="font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; color: #888; letter-spacing: 0.2em; text-transform: uppercase;">⚡ High Voltage Lab</span>
+    <h1 style="margin: 0.25rem 0 0 0; font-size: 2rem; color: #1a1a1a;">Oscilogram Generator</h1>
 </div>
 """, unsafe_allow_html=True)
 
