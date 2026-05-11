@@ -164,7 +164,7 @@ def init_state():
         "pro_unlocked": False,
         "meta_df": None,
         "serial_number": "",
-        "items": [],
+        "osc_items": [],
         "settings": [],
         "preview_index": 0,
     }
@@ -492,7 +492,7 @@ with tab1:
                             st.session_state.pop("template_bytes", None)
 
                         st.session_state.meta_df = meta_df
-                        st.session_state.items = items
+                        st.session_state.osc_items = items
                         st.session_state.settings = settings
                         st.session_state.preview_index = 0
 
@@ -517,7 +517,7 @@ with tab1:
 # TAB 2 — Preview
 # ══════════════════════════════════════════════
 with tab2:
-    items = st.session_state.items
+    items = st.session_state.osc_items
     settings = st.session_state.settings
 
     if not items:
@@ -610,7 +610,7 @@ with tab2:
 # TAB 3 — Export
 # ══════════════════════════════════════════════
 with tab3:
-    items = st.session_state.items
+    items = st.session_state.osc_items
     settings = st.session_state.settings
 
     if not items:
